@@ -1,0 +1,36 @@
+[
+{
+	"uri": "/vi/",
+	"title": "CS50 Tuần 1 - Lập Trình C",
+	"tags": [],
+	"description": "",
+	"content": "Giới Thiệu về Lập Trình C Chào mừng bạn đến với Tuần 1 của khóa học CS50! Module này sẽ giới thiệu các kiến thức nền tảng về lập trình sử dụng ngôn ngữ C.\nMục Tiêu Học Tập Kết thúc module này, bạn sẽ có khả năng:\n Viết được các chương trình cơ bản bằng ngôn ngữ C Hiểu được các khái niệm cốt lõi trong lập trình Làm việc với biến và kiểu dữ liệu Triển khai logic điều kiện Tạo vòng lặp cho các tác vụ lặp đi lặp lại Sử dụng các toán tử và hàm  Nội Dung Workshop \rGiới thiệu\r\r\rLập trình bằng ngôn ngữ C\r\r\r1. Bắt Đầu với C  Tổng quan khóa học Cài đặt môi trường development Chương trình C đầu tiên của bạn  2. Nền Tảng Lập Trình  Cú pháp cơ bản Cấu trúc chương trình Quy trình compilation  3. Làm Việc với Biến  Data types (kiểu dữ liệu) Variable declaration (khai báo biến) Khái niệm về memory (bộ nhớ)  4. Control Flow với Câu Điều Kiện  If statements (câu lệnh if) Switch cases Boolean logic (logic Boolean)  5. Triển Khai Vòng Lặp  For loops While loops Do-while loops  6. Sử Dụng Toán Tử và Hàm  Arithmetic operators (toán tử số học) Logical operators (toán tử logic) Function declaration và usage (khai báo và sử dụng hàm)  7. Thực Hành  Coding exercises (bài tập lập trình) Problem sets (bộ bài tập) Debug challenges (thử thách gỡ lỗi)  Phân Bổ Thời Gian  Tổng thời gian Workshop: ~2 giờ Lý thuyết: 45 phút Bài tập thực hành: 75 phút  Yêu Cầu Tiên Quyết Trước khi bắt đầu workshop này, bạn cần có:\n Máy tính đã cài đặt C compiler Hiểu biết cơ bản về thao tác máy tính Text editor hoặc IDE tùy chọn  "
+},
+{
+	"uri": "/vi/1-introduction/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "CS50 là một khóa học cơ bản về Khoa học Máy tính, do David J. Malan giảng dạy tại Đại học Harvard. Khóa học bao gồm các chủ đề như trừu tượng hóa, thuật toán, cấu trúc dữ liệu, đóng gói, quản lý tài nguyên, bảo mật, kỹ thuật phần mềm và phát triển web. Khóa học cũng cung cấp kiến thức về các ngôn ngữ lập trình như C, Python, SQL, JavaScript, CSS và HTML.\nTrong tuần đầu tiên, chúng ta sẽ học cách lập trình bằng C.\n"
+},
+{
+	"uri": "/vi/2-how-to-program-in-c/",
+	"title": "Lập trình bằng ngôn ngữ C",
+	"tags": [],
+	"description": "",
+	"content": "Trong khoá học này, chúng ta sử dụng Visual Studio Code (VS Code) làm môi trường phát triển tích hợp (IDE). VS Code đã được cài đặt sẵn tất cả các phần mềm cần thiết cho khóa học.\nChúng ta sử dụng ba lệnh để viết, biên dịch và chạy chương trình: code, make, ./\nVí dụ: xây dựng chương trình hello\n  Mở cửa sổ terminal, gõ code hello.c để tạo một tệp C có tên là hello và cho phép chúng ta viết các hướng dẫn cho chương trình này.\n  Trong trình soạn thảo vừa xuất hiện, viết mã như sau:\n  #include \u0026lt;stdio.h\u0026gt;  int main(void) {  printf(\u0026#34;chào bạn\\n\u0026#34;); } printf là hàm để xuất dòng văn bản. Chú ý vị trí dấu ngoặc đơn () và dấu chấm phẩy ;. Kế đó, \\n để thêm một dòng mới sau từ \u0026ldquo;chào bạn\u0026rdquo;. Các hàm khác sẽ được đề cập sau trong khóa học.\nTrong cửa sổ terminal, gõ make hello hoặc clang hello.c -o hello để biên dịch tệp từ chỉ thị của chúng ta và tạo ra một tệp thực thi tên là hello. Tiếp tục gõ ./hello để chạy chương trình hello. Chương trình sẽ thực thi và hiển thị \u0026ldquo;chào bạn\u0026rdquo;.  Trong ngôn ngữ lập trình C, chúng ta có các thư viện hàm. Có một trang tài liệu tổng hợp các hàm và thư viện tương ứng. Các hàm này đã được viết sẵn từ trước và có thể sử dụng lại trong mã của mình.\nỞ đầu mã, nhớ thêm tệp tiêu đề để sử dụng các hàm. Ví dụ thêm tệp tiêu đề stdio.h #include \u0026lt;stdio.h\u0026gt; để dùng hàm printf. Lưu ý thêm, các câu lệnh mã phải kết thúc bằng dấu ; . Quên ; sẽ gây ra lỗi.\n\r"
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
