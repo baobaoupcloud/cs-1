@@ -2,120 +2,400 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="//localhost:1313/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="//localhost:1313/"
                 />
   </url><url>
-    <loc>/1-introduction/</loc>
+    <loc>//localhost:1313/1-introduction/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduction/"
+                href="//localhost:1313/vi/1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduction/"
+                href="//localhost:1313/1-introduction/"
                 />
   </url><url>
-    <loc>/2-how-to-program-in-c/</loc>
+    <loc>//localhost:1313/2-how-to-program-in-c/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-how-to-program-in-c/"
+                href="//localhost:1313/vi/2-how-to-program-in-c/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-how-to-program-in-c/"
+                href="//localhost:1313/2-how-to-program-in-c/"
                 />
   </url><url>
-    <loc>/3-c-syntax/</loc>
-  </url><url>
-    <loc>/4-c-output/</loc>
-  </url><url>
-    <loc>/5-c-comments/</loc>
-  </url><url>
-    <loc>/6-c-variables/</loc>
-  </url><url>
-    <loc>/7-c-data-types/</loc>
-  </url><url>
-    <loc>/8-c-constants/</loc>
-  </url><url>
-    <loc>/9-c-operators/</loc>
-  </url><url>
-    <loc>/10-c-booleans/</loc>
-  </url><url>
-    <loc>/11-c-if-else/</loc>
-  </url><url>
-    <loc>/12-c-switch/</loc>
-  </url><url>
-    <loc>/13-c-switch/</loc>
-  </url><url>
-    <loc>/14-c-while-loop/</loc>
-  </url><url>
-    <loc>/15-c-for-loop/</loc>
-  </url><url>
-    <loc>/16-c-break-and-continue/</loc>
-  </url><url>
-    <loc>/17-c-arrays/</loc>
-  </url><url>
-    <loc>/18-c-strings/</loc>
-  </url><url>
-    <loc>/19-c-user-input/</loc>
-  </url><url>
-    <loc>/20-c-memory-address/</loc>
-  </url><url>
-    <loc>/21-c-pointers/</loc>
-  </url><url>
-    <loc>/22-c-functions/</loc>
-  </url><url>
-    <loc>/23-c-function-parameters/</loc>
-  </url><url>
-    <loc>/24-c-variable-scope/</loc>
-  </url><url>
-    <loc>/25-c-function-declaration-and-definition/</loc>
-  </url><url>
-    <loc>/26-c-recursion/</loc>
-  </url><url>
-    <loc>/27-c-math-functions/</loc>
-  </url><url>
-    <loc>/28-c-structures-structs/</loc>
-  </url><url>
-    <loc>/29-c-enumeration-enum/</loc>
-  </url><url>
-    <loc>/30-c-memory-management/</loc>
-  </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/3-c-syntax/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/categories/"
+                href="//localhost:1313/vi/3-c-syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="//localhost:1313/3-c-syntax/"
                 />
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313/4-c-output/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/tags/"
+                href="//localhost:1313/vi/4-c-output/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="//localhost:1313/4-c-output/"
+                />
+  </url><url>
+    <loc>//localhost:1313/5-c-comments/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-c-comments/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-c-comments/"
+                />
+  </url><url>
+    <loc>//localhost:1313/6-c-variables/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-c-variables/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-c-variables/"
+                />
+  </url><url>
+    <loc>//localhost:1313/7-c-data-types/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-c-data-types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-c-data-types/"
+                />
+  </url><url>
+    <loc>//localhost:1313/8-c-constants/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-c-constants/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-c-constants/"
+                />
+  </url><url>
+    <loc>//localhost:1313/9-c-operators/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/9-c-operators/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/9-c-operators/"
+                />
+  </url><url>
+    <loc>//localhost:1313/10-c-booleans/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/10-c-booleans/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/10-c-booleans/"
+                />
+  </url><url>
+    <loc>//localhost:1313/11-c-if-else/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/11-c-if-else/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/11-c-if-else/"
+                />
+  </url><url>
+    <loc>//localhost:1313/12-c-switch/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/12-c-switch/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/12-c-switch/"
+                />
+  </url><url>
+    <loc>//localhost:1313/13-c-switch/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/13-c-switch/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/13-c-switch/"
+                />
+  </url><url>
+    <loc>//localhost:1313/14-c-while-loop/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/14-c-while-loop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/14-c-while-loop/"
+                />
+  </url><url>
+    <loc>//localhost:1313/15-c-for-loop/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/15-c-for-loop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/15-c-for-loop/"
+                />
+  </url><url>
+    <loc>//localhost:1313/16-c-break-and-continue/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/16-c-break-and-continue/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/16-c-break-and-continue/"
+                />
+  </url><url>
+    <loc>//localhost:1313/17-c-arrays/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/17-c-arrays/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/17-c-arrays/"
+                />
+  </url><url>
+    <loc>//localhost:1313/18-c-strings/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/18-c-strings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/18-c-strings/"
+                />
+  </url><url>
+    <loc>//localhost:1313/19-c-user-input/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/19-c-user-input/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/19-c-user-input/"
+                />
+  </url><url>
+    <loc>//localhost:1313/20-c-memory-address/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/20-c-memory-address/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/20-c-memory-address/"
+                />
+  </url><url>
+    <loc>//localhost:1313/21-c-pointers/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/21-c-pointers/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/21-c-pointers/"
+                />
+  </url><url>
+    <loc>//localhost:1313/22-c-functions/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/22-c-functions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/22-c-functions/"
+                />
+  </url><url>
+    <loc>//localhost:1313/23-c-function-parameters/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/23-c-function-parameters/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/23-c-function-parameters/"
+                />
+  </url><url>
+    <loc>//localhost:1313/24-c-variable-scope/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/24-c-variable-scope/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/24-c-variable-scope/"
+                />
+  </url><url>
+    <loc>//localhost:1313/25-c-function-declaration-and-definition/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/25-c-function-declaration-and-definition/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/25-c-function-declaration-and-definition/"
+                />
+  </url><url>
+    <loc>//localhost:1313/26-c-recursion/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/26-c-recursion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/26-c-recursion/"
+                />
+  </url><url>
+    <loc>//localhost:1313/27-c-math-functions/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/27-c-math-functions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/27-c-math-functions/"
+                />
+  </url><url>
+    <loc>//localhost:1313/28-c-structures-structs/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/28-c-structures-structs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/28-c-structures-structs/"
+                />
+  </url><url>
+    <loc>//localhost:1313/29-c-enumeration-enum/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/29-c-enumeration-enum/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/29-c-enumeration-enum/"
+                />
+  </url><url>
+    <loc>//localhost:1313/30-c-memory-management/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/30-c-memory-management/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/30-c-memory-management/"
+                />
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/categories/"
+                />
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/tags/"
                 />
   </url>
 </urlset>

@@ -4,7 +4,7 @@ chapter = false
 weight = 1
 +++
 
-#### Giới Thiệu về Lập Trình C
+# Giới Thiệu về Lập Trình C
 
 Chào mừng bạn đến với Tuần 1 của khóa học CS50! Module này sẽ giới thiệu các kiến thức nền tảng về lập trình sử dụng ngôn ngữ C.
 
@@ -21,7 +21,6 @@ Kết thúc module này, bạn sẽ có khả năng:
 
 #### Nội Dung Workshop
 
-{{% children showhidden="false" %}}
 
 #### 1. Bắt Đầu với C
 
@@ -77,7 +76,7 @@ Trước khi bắt đầu workshop này, bạn cần có:
 
 * Máy tính đã cài đặt C compiler
 * Hiểu biết cơ bản về thao tác máy tính
-* Text editor hoặc IDE tùy chọn
+* Text editor hoặc IDE tùy chọn (tham khảo [Visual Studio Code](https://code.visualstudio.com/))
 
 {{% notice note %}}
 Workshop này là một phần của chuỗi khóa học CS50. Mặc dù không yêu cầu kinh nghiệm lập trình trước đó, việc quen thuộc với các thao tác máy tính cơ bản sẽ rất hữu ích.
