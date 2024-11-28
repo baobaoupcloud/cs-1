@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.134.0">
+    <meta name="description" content="Baobao">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Lập trình bằng ngôn ngữ C :: CS50</title>
+
+    
+    <link href="/css/nucleus.css?1732790982" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1732790982" rel="stylesheet">
+    <link href="/css/hybrid.css?1732790982" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1732790982" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1732790982" rel="stylesheet">
+    <link href="/css/auto-complete.css?1732790982" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1732790982" rel="stylesheet">
+    <link href="/css/theme.css?1732790982" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1732790982" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1732790982" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1732790982"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/2-how-to-program-in-c/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://baobaoupcloud.github.io/cs/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1732790982"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1732790982"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1732790982"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduction/" title="Giới thiệu về CS50" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-introduction/">
+          <b> 1. </b>Giới thiệu về CS50
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-how-to-program-in-c/" title="Lập trình bằng ngôn ngữ C" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/2-how-to-program-in-c/">
+           <b> 2. </b> Lập trình bằng ngôn ngữ C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-c-syntax/" title="Cú pháp C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-c-syntax/">
+           <b> 3. </b> Cú pháp C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-c-output/" title="Output và Input trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-c-output/">
+           <b> 4. </b> Output và Input trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-c-comments/" title="Comments trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-c-comments/">
+           <b> 5. </b> Comments trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-c-variables/" title="Biến trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-c-variables/">
+           <b> 6. </b> Biến trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-c-data-types/" title="Các kiểu dữ liệu trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-c-data-types/">
+           <b> 7. </b> Các kiểu dữ liệu trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-c-constants/" title="Hằng số trong lập trình C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-c-constants/">
+           <b> 8. </b> Hằng số trong lập trình C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/9-c-operators/" title="Toán tử trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/9-c-operators/">
+           <b> 9. </b> Toán tử trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/10-c-booleans/" title="Kiểu dữ liệu Boolean" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/10-c-booleans/">
+           <b> 10. </b> Kiểu dữ liệu Boolean
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/11-c-if-else/" title="Câu lệnh điều kiện trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/11-c-if-else/">
+           <b> 11. </b> Câu lệnh điều kiện trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/12-c-switch/" title="Switch Statement trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/12-c-switch/">
+           <b> 12. </b> Switch Statement trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/13-c-while-loop/" title="Vòng lặp trong lập trình C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/13-c-while-loop/">
+           <b> 13. </b> Vòng lặp trong lập trình C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/14-c-for-loop/" title="Vòng lặp For trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/14-c-for-loop/">
+           <b> 14. </b> Vòng lặp For trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/15-c-break-and-continue/" title="Câu lệnh Break và Continue trong C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/15-c-break-and-continue/">
+           <b> 15. </b> Câu lệnh Break và Continue trong C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/16-summary/" title="Tóm tắt" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/16-summary/">
+           <b> 16. </b> Tóm tắt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/2-how-to-program-in-c/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/2-how-to-program-in-c/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>27-11-2024</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/phan-kim-bao/"  style="color:orange">Phan Kim Bảo </a> <br>
+
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://baobaoupcloud.github.io/cs-1/2-How-to-program-in-C/_index.vi.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>CS50 Tuần 1 - Lập Trình C</a> > Lập trình bằng ngôn ngữ C
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Lập trình bằng ngôn ngữ C
+            </h1>
+          
+
+        
+
+
+
+	<h4 id="cấu-hình-vs-code-cho-microsoft-c">Cấu hình VS Code cho Microsoft C++</h4>
+<p>Trong hướng dẫn này, bạn sẽ cấu hình Visual Studio Code để sử dụng trình biên dịch và gỡ lỗi Microsoft Visual C++ trên Windows.</p>
+<p>Sau khi cấu hình VS Code, bạn sẽ biên dịch và gỡ lỗi một chương trình Hello World đơn giản trong VS Code. Hướng dẫn này không dạy chi tiết về bộ công cụ Microsoft C++ hay ngôn ngữ C++. Với những chủ đề đó, có rất nhiều tài liệu tốt trên mạng.</p>
+<p>Nếu bạn gặp bất kỳ vấn đề nào, hãy thoải mái tạo issue cho hướng dẫn này trong <a href="https://github.com/microsoft/vscode-docs/issues">kho lưu trữ tài liệu VS Code</a>.</p>
+<h4 id="yêu-cầu-trước-khi-bắt-đầu">Yêu cầu trước khi bắt đầu</h4>
+<p>Để hoàn thành thành công hướng dẫn này, bạn cần:</p>
+<ol>
+<li>
+<p>Cài đặt <a href="/download">Visual Studio Code</a></p>
+</li>
+<li>
+<p>Cài đặt <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">tiện ích mở rộng C/C++ cho VS Code</a>. Bạn có thể cài đặt tiện ích C/C++ bằng cách tìm kiếm &lsquo;c++&rsquo; trong mục Extensions (<code>kb(workbench.view.extensions)</code>).</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0001.png?featherlight=false&width=90pc"></p>
+<ol start="3">
+<li>
+<p>Cài đặt bộ công cụ trình biên dịch Microsoft Visual C++ (MSVC).</p>
+<p>Nếu bạn có phiên bản Visual Studio mới, hãy mở Visual Studio Installer từ menu Start của Windows và kiểm tra xem workload C++ đã được chọn chưa. Nếu chưa cài đặt, hãy đánh dấu vào ô và chọn nút <strong>Modify</strong> trong trình cài đặt.</p>
+<p>Bạn cũng có thể cài đặt workload <strong>Desktop development with C++</strong> mà không cần cài đặt đầy đủ IDE Visual Studio. Từ trang <a href="https://visualstudio.microsoft.com/downloads/#remote-tools-for-visual-studio-2022">Downloads</a> của Visual Studio, cuộn xuống cho đến khi thấy <strong>Tools for Visual Studio</strong> trong phần <strong>All Downloads</strong> và chọn tải về <strong>Build Tools for Visual Studio 2022</strong>.</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0002.png?featherlight=false&width=90pc"></p>
+<p>Điều này sẽ khởi chạy Visual Studio Installer, hiển thị hộp thoại các workload có sẵn của Visual Studio Build Tools. Đánh dấu workload <strong>Desktop development with C++</strong> và chọn <strong>Install</strong>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0003.png?featherlight=false&width=90pc"></p>
+<blockquote>
+<p><strong>Lưu ý</strong>: Bạn có thể sử dụng bộ công cụ C++ từ Visual Studio Build Tools cùng với Visual Studio Code để biên dịch, build và xác minh bất kỳ codebase C++ nào miễn là bạn có giấy phép Visual Studio hợp lệ (Community, Pro hoặc Enterprise) mà bạn đang sử dụng để phát triển codebase C++ đó.</p>
+</blockquote>
+<h4 id="kiểm-tra-cài-đặt-microsoft-visual-c">Kiểm tra cài đặt Microsoft Visual C++</h4>
+<p>Để sử dụng MSVC từ dòng lệnh hoặc VS Code, bạn phải chạy từ <strong>Developer Command Prompt for Visual Studio</strong>. Một shell thông thường như PowerShell, Bash hoặc Windows command prompt không có các biến môi trường path cần thiết.</p>
+<p>Để mở Developer Command Prompt for VS, bắt đầu gõ &lsquo;developer&rsquo; trong menu Start của Windows, và bạn sẽ thấy nó xuất hiện trong danh sách gợi ý. Tên chính xác phụ thuộc vào phiên bản Visual Studio hoặc Visual Studio Build Tools bạn đã cài đặt. Chọn mục này để mở command prompt.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0004.png?featherlight=false&width=90pc"></p>
+<p>Bạn có thể kiểm tra xem trình biên dịch C++, <code>cl.exe</code>, đã được cài đặt đúng chưa bằng cách gõ &lsquo;cl&rsquo; và bạn sẽ thấy thông báo bản quyền với phiên bản và mô tả sử dụng cơ bản.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0005.png?featherlight=false&width=90pc"></p>
+<p>Nếu Developer Command Prompt đang sử dụng thư mục BuildTools làm thư mục khởi đầu (bạn không nên đặt dự án ở đó), hãy điều hướng đến thư mục người dùng của bạn (<code>C:\users\{tên người dùng}\</code>) trước khi bắt đầu tạo dự án mới.</p>
+<blockquote>
+<p><strong>Lưu ý</strong>: Nếu vì lý do nào đó bạn không thể chạy VS Code từ <strong>Developer Command Prompt</strong>, bạn có thể tìm giải pháp thay thế để build các dự án C++ với VS Code trong phần <a href="/vi/2-how-to-program-in-c/#run-vs-code-outside-the-developer-command-prompt">Chạy VS Code bên ngoài Developer Command Prompt</a>.</p>
+</blockquote>
+<h4 id="tạo-hello-world">Tạo Hello World</h4>
+<p>Từ Developer Command Prompt, tạo một thư mục trống có tên &ldquo;projects&rdquo; nơi bạn có thể lưu trữ tất cả các dự án VS Code, sau đó tạo một thư mục con có tên &ldquo;helloworld&rdquo;, điều hướng vào nó và mở VS Code (<code>code</code>) trong thư mục đó (<code>.</code>) bằng cách nhập các lệnh sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> projects
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> projects
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> helloworld
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> helloworld
+</span></span><span style="display:flex;"><span>code .
+</span></span></code></pre></div><p>Lệnh &ldquo;code .&rdquo; mở VS Code trong thư mục làm việc hiện tại, thư mục này trở thành &ldquo;workspace&rdquo; của bạn. Khi bạn làm theo hướng dẫn, bạn sẽ thấy ba tệp được tạo trong thư mục <code>.vscode</code> trong workspace:</p>
+<ul>
+<li><code>tasks.json</code> (hướng dẫn build)</li>
+<li><code>launch.json</code> (cài đặt trình gỡ lỗi)</li>
+<li><code>c_cpp_properties.json</code> (đường dẫn trình biên dịch và cài đặt IntelliSense)</li>
+</ul>
+<h4 id="thêm-tệp-mã-nguồn">Thêm tệp mã nguồn</h4>
+<p>Trong thanh tiêu đề File Explorer, chọn nút <strong>New File</strong> và đặt tên tệp là <code>helloworld.cpp</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0006.png?featherlight=false&width=90pc"></p>
+<h4 id="thêm-mã-nguồn-hello-world">Thêm mã nguồn hello world</h4>
+<p>Bây giờ dán mã nguồn này vào:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> msg {<span style="color:#e6db74">&#34;Hello&#34;</span>, <span style="color:#e6db74">&#34;C++&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>, <span style="color:#e6db74">&#34;from&#34;</span>, <span style="color:#e6db74">&#34;VS Code&#34;</span>, <span style="color:#e6db74">&#34;and the C++ extension!&#34;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> string<span style="color:#f92672">&amp;</span> word : msg)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> word <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nhấn <code>kb(workbench.action.files.save)</code> để lưu tệp. Chú ý cách tệp bạn vừa thêm xuất hiện trong chế độ xem <strong>File Explorer</strong> (<code>kb(workbench.view.explorer)</code>) ở thanh bên của VS Code:</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0007.png?featherlight=false&width=90pc"></p>
+<p>Bạn cũng có thể bật <a href="/docs/editor/codebasics.md#save-auto-save">Auto Save</a> để tự động lưu các thay đổi tệp của bạn, bằng cách chọn <strong>Auto Save</strong> trong menu chính <strong>File</strong>.</p>
+<p>Activity Bar ở bên trái xa cho phép bạn mở các chế độ xem khác nhau như <strong>Search</strong>, <strong>Source Control</strong> và <strong>Run</strong>. Bạn sẽ xem chế độ xem <strong>Run</strong> sau trong hướng dẫn này. Bạn có thể tìm hiểu thêm về các chế độ xem khác trong <a href="/docs/getstarted/userinterface.md">tài liệu Giao diện người dùng VS Code</a>.</p>
+<blockquote>
+<p><strong>Lưu ý</strong>: Khi bạn lưu hoặc mở tệp C++, bạn có thể thấy thông báo từ tiện ích mở rộng C/C++ về việc có sẵn phiên bản Insiders, cho phép bạn thử các tính năng và bản sửa lỗi mới. Bạn có thể bỏ qua thông báo này bằng cách chọn <code>X</code> (<strong>Clear Notification</strong>).</p>
+</blockquote>
+<h4 id="khám-phá-intellisense">Khám phá IntelliSense</h4>
+<p>Trong tệp <code>helloworld.cpp</code> mới của bạn, di chuột qua <code>vector</code> hoặc <code>string</code> để xem thông tin kiểu. Sau khi khai báo biến <code>msg</code>, bắt đầu gõ <code>msg.</code> như khi bạn gọi một hàm thành viên. Bạn sẽ ngay lập tức thấy danh sách hoàn thành hiển thị tất cả các hàm thành viên và một cửa sổ hiển thị thông tin kiểu cho đối tượng <code>msg</code>:</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0008.png?featherlight=false&width=90pc"></p>
+<p>Bạn có thể nhấn phím <code>kbstyle(Tab)</code> để chèn thành viên được chọn; sau đó, khi bạn thêm dấu ngoặc đơn mở, bạn sẽ thấy thông tin về bất kỳ đối số nào mà hàm yêu cầu.</p>
+<p>Tôi sẽ tiếp tục dịch phần tiếp theo:</p>
+<h4 id="chạy-helloworldcpp">Chạy helloworld.cpp</h4>
+<p>Hãy nhớ rằng, tiện ích mở rộng C++ sử dụng trình biên dịch C++ đã được cài đặt trên máy của bạn để build chương trình. Đảm bảo bạn đã cài đặt trình biên dịch C++ trước khi thử chạy và gỡ lỗi <code>helloworld.cpp</code> trong VS Code.</p>
+<ol>
+<li>Mở <code>helloworld.cpp</code> để nó là tệp đang hoạt động.</li>
+<li>Nhấn nút play ở góc trên bên phải của trình soạn thảo.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0009.png?featherlight=false&width=90pc"></p>
+<ol start="3">
+<li>Chọn <strong>C/C++: cl.exe build and debug active file</strong> từ danh sách trình biên dịch được phát hiện trên hệ thống của bạn.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00010.png?featherlight=false&width=90pc"></p>
+<p>Bạn sẽ chỉ được yêu cầu chọn trình biên dịch lần đầu tiên chạy <code>helloworld.cpp</code>. Trình biên dịch này sẽ được đặt làm trình biên dịch &ldquo;mặc định&rdquo; trong tệp <code>tasks.json</code>.</p>
+<ol start="4">
+<li>Sau khi build thành công, đầu ra của chương trình sẽ xuất hiện trong <strong>Terminal</strong> tích hợp.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00011.png?featherlight=false&width=90pc"></p>
+<p>Nếu bạn gặp lỗi khi cố gắng build và gỡ lỗi với cl.exe, hãy đảm bảo bạn đã <a href="/vi/2-how-to-program-in-c/#check-your-microsoft-visual-c-installation">khởi động VS Code từ Developer Command Prompt for Visual Studio</a> sử dụng lệnh tắt <code>code .</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00012.png?featherlight=false&width=90pc"></p>
+<p>Lần đầu tiên bạn chạy chương trình, tiện ích mở rộng C++ tạo <code>tasks.json</code>, bạn sẽ tìm thấy nó trong thư mục <code>.vscode</code> của dự án. <code>tasks.json</code> lưu trữ cấu hình build.</p>
+<p>Tệp <code>tasks.json</code> mới của bạn phải trông tương tự như JSON dưới đây:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;tasks&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build active file&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;cl.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/Zi&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/EHsc&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/Fe:&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${file}&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;problemMatcher&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;$msCompile&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;group&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;detail&#34;</span>: <span style="color:#e6db74">&#34;Task generated by Debugger.&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>Lưu ý</strong>: Bạn có thể tìm hiểu thêm về các biến <code>tasks.json</code> trong <a href="/docs/editor/variables-reference.md">tài liệu tham khảo biến</a>.</p>
+</blockquote>
+<p>Cài đặt <code>command</code> chỉ định chương trình để chạy; trong trường hợp này là &ldquo;cl.exe&rdquo;. Mảng <code>args</code> chỉ định các đối số dòng lệnh sẽ được truyền cho cl.exe. Các đối số này phải được chỉ định theo thứ tự mà trình biên dịch mong đợi.</p>
+<p>Task này yêu cầu trình biên dịch C++ lấy tệp đang hoạt động (<code>${file}</code>), biên dịch nó và tạo một tệp thực thi (<code>/Fe:</code> switch) trong thư mục hiện tại (<code>${fileDirname}</code>) với cùng tên như tệp đang hoạt động nhưng với phần mở rộng <code>.exe</code> (<code>${fileBasenameNoExtension}.exe</code>), kết quả là <code>helloworld.exe</code> cho ví dụ của chúng ta.</p>
+<h4 id="chạy-helloworldcpp-1">Chạy helloworld.cpp</h4>
+<p>Hãy nhớ rằng, tiện ích mở rộng C++ sử dụng trình biên dịch C++ đã được cài đặt trên máy của bạn để build chương trình. Đảm bảo bạn đã cài đặt trình biên dịch C++ trước khi thử chạy và gỡ lỗi <code>helloworld.cpp</code> trong VS Code.</p>
+<ol>
+<li>Mở <code>helloworld.cpp</code> để nó là tệp đang hoạt động.</li>
+<li>Nhấn nút play ở góc trên bên phải của trình soạn thảo.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0009.png?featherlight=false&width=90pc"></p>
+<ol start="3">
+<li>Chọn <strong>C/C++: cl.exe build and debug active file</strong> từ danh sách trình biên dịch được phát hiện trên hệ thống của bạn.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00010.png?featherlight=false&width=90pc"></p>
+<p>Bạn sẽ chỉ được yêu cầu chọn trình biên dịch lần đầu tiên chạy <code>helloworld.cpp</code>. Trình biên dịch này sẽ được đặt làm trình biên dịch &ldquo;mặc định&rdquo; trong tệp <code>tasks.json</code>.</p>
+<ol start="4">
+<li>Sau khi build thành công, đầu ra của chương trình sẽ xuất hiện trong <strong>Terminal</strong> tích hợp.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00011.png?featherlight=false&width=90pc"></p>
+<p>Nếu bạn gặp lỗi khi cố gắng build và gỡ lỗi với cl.exe, hãy đảm bảo bạn đã <a href="/vi/2-how-to-program-in-c/#check-your-microsoft-visual-c-installation">khởi động VS Code từ Developer Command Prompt for Visual Studio</a> sử dụng lệnh tắt <code>code .</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00012.png?featherlight=false&width=90pc"></p>
+<p>Lần đầu tiên bạn chạy chương trình, tiện ích mở rộng C++ tạo <code>tasks.json</code>, bạn sẽ tìm thấy nó trong thư mục <code>.vscode</code> của dự án. <code>tasks.json</code> lưu trữ cấu hình build.</p>
+<p>Tệp <code>tasks.json</code> mới của bạn phải trông tương tự như JSON dưới đây:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;tasks&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build active file&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;cl.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/Zi&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/EHsc&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/Fe:&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${file}&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;problemMatcher&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;$msCompile&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;group&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;detail&#34;</span>: <span style="color:#e6db74">&#34;Task generated by Debugger.&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>Lưu ý</strong>: Bạn có thể tìm hiểu thêm về các biến <code>tasks.json</code> trong <a href="/docs/editor/variables-reference.md">tài liệu tham khảo biến</a>.</p>
+</blockquote>
+<p>Cài đặt <code>command</code> chỉ định chương trình để chạy; trong trường hợp này là &ldquo;cl.exe&rdquo;. Mảng <code>args</code> chỉ định các đối số dòng lệnh sẽ được truyền cho cl.exe. Các đối số này phải được chỉ định theo thứ tự mà trình biên dịch mong đợi.</p>
+<p>Task này yêu cầu trình biên dịch C++ lấy tệp đang hoạt động (<code>${file}</code>), biên dịch nó và tạo một tệp thực thi (<code>/Fe:</code> switch) trong thư mục hiện tại (<code>${fileDirname}</code>) với cùng tên như tệp đang hoạt động nhưng với phần mở rộng <code>.exe</code> (<code>${fileBasenameNoExtension}.exe</code>), kết quả là <code>helloworld.exe</code> cho ví dụ của chúng ta.</p>
+<p>Giá trị <code>label</code> là những gì bạn sẽ thấy trong danh sách task; bạn có thể đặt tên này theo ý muốn.</p>
+<p>Giá trị <code>detail</code> là những gì bạn sẽ thấy như mô tả của task trong danh sách task. Rất nên đổi tên giá trị này để phân biệt nó với các task tương tự.</p>
+<p>Giá trị <code>problemMatcher</code> chọn trình phân tích cú pháp đầu ra để tìm lỗi và cảnh báo trong đầu ra của trình biên dịch. Đối với cl.exe, bạn sẽ nhận được kết quả tốt nhất nếu sử dụng problem matcher <code>$msCompile</code>.</p>
+<p>Từ giờ trở đi, nút play sẽ đọc từ <code>tasks.json</code> để biết cách build và chạy chương trình của bạn. Bạn có thể định nghĩa nhiều task build trong <code>tasks.json</code>, và task nào được đánh dấu là mặc định sẽ được nút play sử dụng. Trong trường hợp bạn cần thay đổi trình biên dịch mặc định, bạn có thể chạy <strong>Tasks: Configure default build task</strong>. Hoặc bạn có thể sửa đổi tệp <code>tasks.json</code> và xóa mặc định bằng cách thay thế đoạn này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;group&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><p>bằng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;group&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;build&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><h4 id="sửa-đổi-tasksjson">Sửa đổi tasks.json</h4>
+<p>Bạn có thể sửa đổi <code>tasks.json</code> để build nhiều tệp C++ bằng cách sử dụng đối số như <code>&quot;${workspaceFolder}/*.cpp&quot;</code> thay vì <code>&quot;${file}&quot;</code>. Điều này sẽ build tất cả các tệp <code>.cpp</code> trong thư mục hiện tại của bạn. Bạn cũng có thể sửa đổi tên tệp đầu ra bằng cách thay thế <code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code> bằng tên tệp cố định (ví dụ: <code>&quot;${workspaceFolder}\\myProgram.exe&quot;</code>).</p>
+<h4 id="gỡ-lỗi-helloworldcpp">Gỡ lỗi helloworld.cpp</h4>
+<p>Để gỡ lỗi code của bạn:</p>
+<ol>
+<li>Quay lại <code>helloworld.cpp</code> để nó là tệp đang hoạt động.</li>
+<li>Đặt điểm dừng bằng cách nhấp vào lề trình soạn thảo hoặc sử dụng F9 trên dòng hiện tại.
+<img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00013.png?featherlight=false&width=90pc"></li>
+<li>Từ drop-down bên cạnh nút play, chọn <strong>Debug C/C++ File</strong>.
+<img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00014.png?featherlight=false&width=90pc"></li>
+<li>Chọn <strong>C/C++: cl.exe build and debug active file</strong> từ danh sách trình biên dịch được phát hiện trên hệ thống của bạn (bạn sẽ chỉ được yêu cầu chọn trình biên dịch lần đầu tiên chạy hoặc gỡ lỗi <code>helloworld.cpp</code>).
+<img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00015.png?featherlight=false&width=90pc"></li>
+</ol>
+<p>Nút play có hai chế độ: <strong>Run C/C++ File</strong> và <strong>Debug C/C++ File</strong>. Nó sẽ mặc định về chế độ được sử dụng lần cuối. Nếu bạn thấy biểu tượng gỡ lỗi trong nút play, bạn có thể chọn nút play để gỡ lỗi thay vì chọn mục trong menu drop-down.</p>
+<p>Nếu bạn gặp lỗi khi cố gắng build và gỡ lỗi với cl.exe, hãy đảm bảo bạn đã <a href="/vi/2-how-to-program-in-c/#check-your-microsoft-visual-c-installation">khởi động VS Code từ Developer Command Prompt for Visual Studio</a> sử dụng lệnh tắt <code>code .</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00016.png?featherlight=false&width=90pc"></p>
+<h4 id="khám-phá-trình-gỡ-lỗi">Khám phá trình gỡ lỗi</h4>
+<p>Trước khi bắt đầu thực hiện từng bước trong code, hãy dành một chút thời gian để nhận thấy một số thay đổi trong giao diện người dùng:</p>
+<ul>
+<li>Terminal tích hợp xuất hiện ở dưới cùng của trình soạn thảo mã nguồn. Trong tab <strong>Debug Output</strong>, bạn thấy đầu ra cho biết trình gỡ lỗi đang hoạt động.</li>
+<li>Trình soạn thảo làm nổi bật dòng nơi bạn đặt điểm dừng trước khi bắt đầu trình gỡ lỗi:</li>
+</ul>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00017.png?featherlight=false&width=90pc"></p>
+<ul>
+<li>
+<p>Chế độ xem <strong>Run and Debug</strong> ở bên trái hiển thị thông tin gỡ lỗi. Bạn sẽ thấy một ví dụ sau trong hướng dẫn.</p>
+</li>
+<li>
+<p>Ở đầu trình soạn thảo code, bảng điều khiển gỡ lỗi xuất hiện. Bạn có thể di chuyển nó xung quanh màn hình bằng cách kéo các chấm ở bên trái.</p>
+</li>
+</ul>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00018.png?featherlight=false&width=90pc"></p>
+<h4 id="thực-hiện-từng-bước-trong-code">Thực hiện từng bước trong code</h4>
+<p>Bây giờ bạn đã sẵn sàng để bắt đầu thực hiện từng bước trong code.</p>
+<ol>
+<li>Nhấp hoặc nhấn biểu tượng <strong>Step over</strong> trong bảng điều khiển gỡ lỗi.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00019.png?featherlight=false&width=90pc"></p>
+<p>Điều này sẽ chuyển thực thi chương trình đến dòng đầu tiên của vòng lặp for, và bỏ qua tất cả các lệnh gọi hàm nội bộ trong các lớp <code>vector</code> và <code>string</code> được gọi khi biến <code>msg</code> được tạo và khởi tạo. Chú ý sự thay đổi trong cửa sổ <strong>Variables</strong> ở bên trái.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00020.png?featherlight=false&width=90pc"></p>
+<p>Trong trường hợp này, các lỗi là dự kiến vì, mặc dù tên biến cho vòng lặp hiện đã hiển thị với trình gỡ lỗi, câu lệnh vẫn chưa thực thi, vì vậy không có gì để đọc tại thời điểm này. Tuy nhiên, nội dung của <code>msg</code> hiển thị vì câu lệnh đó đã hoàn thành.</p>
+<ol>
+<li>
+<p>Nhấn <strong>Step over</strong> một lần nữa để chuyển đến câu lệnh tiếp theo trong chương trình này (bỏ qua tất cả code bên trong được thực thi để khởi tạo vòng lặp). Bây giờ, cửa sổ <strong>Variables</strong> hiển thị thông tin về các biến vòng lặp.</p>
+</li>
+<li>
+<p>Nhấn <strong>Step over</strong> một lần nữa để thực thi câu lệnh <code>cout</code>. (Lưu ý rằng tiện ích mở rộng C++ không in bất kỳ đầu ra nào vào <strong>Debug Console</strong> cho đến khi vòng lặp kết thúc.)</p>
+</li>
+<li>
+<p>Nếu muốn, bạn có thể tiếp tục nhấn <strong>Step over</strong> cho đến khi tất cả các từ trong vector được in ra console. Nhưng nếu bạn tò mò, hãy thử nhấn nút <strong>Step Into</strong> để thực hiện từng bước qua mã nguồn trong thư viện chuẩn C++!</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00021.png?featherlight=false&width=90pc"></p>
+<p>Để quay lại code của bạn, một cách là tiếp tục nhấn <strong>Step over</strong>. Một cách khác là đặt điểm dừng trong code của bạn bằng cách chuyển sang tab <code>helloworld.cpp</code> trong trình soạn thảo code, đặt con trỏ chèn vào câu lệnh <code>cout</code> bên trong vòng lặp và nhấn <code>kb(editor.debug.action.toggleBreakpoint)</code>. Một chấm đỏ xuất hiện trong máng bên trái để chỉ ra rằng một điểm dừng đã được đặt trên dòng này.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00022.png?featherlight=false&width=90pc"></p>
+<p>Sau đó nhấn <code>kb(workbench.action.debug.start)</code> để bắt đầu thực thi từ dòng hiện tại trong header thư viện chuẩn. Thực thi sẽ dừng tại <code>cout</code>. Nếu muốn, bạn có thể nhấn <code>kb(editor.debug.action.toggleBreakpoint)</code> một lần nữa để tắt điểm dừng.</p>
+<h4 id="thiết-lập-theo-dõi">Thiết lập theo dõi</h4>
+<p>Đôi khi bạn có thể muốn theo dõi giá trị của một biến khi chương trình của bạn thực thi. Bạn có thể làm điều này bằng cách thiết lập một <strong>watch</strong> trên biến.</p>
+<ol>
+<li>Đặt con trỏ chèn bên trong vòng lặp. Trong cửa sổ <strong>Watch</strong>, chọn dấu cộng và trong hộp văn bản, gõ <code>word</code>, là tên của biến vòng lặp. Bây giờ xem cửa sổ Watch khi bạn thực hiện từng bước qua vòng lặp.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00023.png?featherlight=false&width=90pc"></p>
+<ol start="2">
+<li>
+<p>Thêm một watch khác bằng cách thêm câu lệnh này trước vòng lặp: <code>int i = 0;</code>. Sau đó, bên trong vòng lặp, thêm câu lệnh: <code>++i;</code>. Bây giờ thêm một watch cho <code>i</code> như bạn đã làm trong bước trước.</p>
+</li>
+<li>
+<p>Để nhanh chóng xem giá trị của bất kỳ biến nào trong khi thực thi đang tạm dừng tại điểm dừng, bạn có thể di chuột qua nó.</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00024.png?featherlight=false&width=90pc"></p>
+<h4 id="tùy-chỉnh-gỡ-lỗi-với-launchjson">Tùy chỉnh gỡ lỗi với launch.json</h4>
+<p>Khi bạn gỡ lỗi với nút play hoặc <code>kb(workbench.action.debug.start)</code>, tiện ích mở rộng C++ tạo một cấu hình gỡ lỗi động ngay lập tức.</p>
+<p>Có những trường hợp bạn muốn tùy chỉnh cấu hình gỡ lỗi của mình, chẳng hạn như chỉ định các đối số để truyền cho chương trình trong thời gian chạy. Bạn có thể định nghĩa các cấu hình gỡ lỗi tùy chỉnh trong tệp <code>launch.json</code>.</p>
+<p>Để tạo <code>launch.json</code>, chọn <strong>Add Debug Configuration</strong> từ menu drop-down của nút play.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00025.png?featherlight=false&width=90pc"></p>
+<p>Sau đó bạn sẽ thấy một dropdown cho các cấu hình gỡ lỗi được xác định trước khác nhau. Chọn <strong>C/C++: cl.exe build and debug active file</strong>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00026.png?featherlight=false&width=90pc"></p>
+<p>VS Code tạo một tệp <code>launch.json</code>, trông giống như thế này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.2.0&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;configurations&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build and debug active file&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;cppvsdbg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;program&#34;</span>: <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;stopAtEntry&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;environment&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;externalConsole&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;preLaunchTask&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build active file&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Trong JSON trên, <code>program</code> chỉ định chương trình bạn muốn gỡ lỗi. Ở đây nó được đặt thành thư mục tệp đang hoạt động (<code>${fileDirname}</code>) và tên tệp đang hoạt động với phần mở rộng <code>.exe</code> (<code>${fileBasenameNoExtension}.exe</code>), nếu <code>helloworld.cpp</code> là tệp đang hoạt động thì sẽ là <code>helloworld.exe</code>. Thuộc tính <code>args</code> là một mảng các đối số để truyền cho chương trình trong thời gian chạy.</p>
+<p>Theo mặc định, tiện ích mở rộng C++ sẽ không thêm bất kỳ điểm dừng nào vào mã nguồn của bạn và giá trị <code>stopAtEntry</code> được đặt thành <code>false</code>.</p>
+<p>Thay đổi giá trị <code>stopAtEntry</code> thành <code>true</code> để khiến trình gỡ lỗi dừng tại phương thức <code>main</code> khi bạn bắt đầu gỡ lỗi.</p>
+<blockquote>
+<p>Từ giờ trở đi, nút play và <code>kb(workbench.action.debug.start)</code> sẽ đọc từ tệp <code>launch.json</code> của bạn khi khởi chạy chương trình để gỡ lỗi.</p>
+</blockquote>
+<h4 id="cấu-hình-cc">Cấu hình C/C++</h4>
+<p>Nếu bạn muốn kiểm soát nhiều hơn đối với tiện ích mở rộng C++, bạn có thể tạo một tệp <code>c_cpp_properties.json</code>, cho phép bạn thay đổi các cài đặt như đường dẫn đến trình biên dịch, đường dẫn include, tiêu chuẩn C++ (mặc định là C++17), và nhiều hơn nữa.</p>
+<p>Bạn có thể xem giao diện cấu hình C/C++ bằng cách chạy lệnh <strong>C/C++: Edit Configurations (UI)</strong> từ Command Palette (<code>kb(workbench.action.showCommands)</code>).</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00027.png?featherlight=false&width=90pc"></p>
+<p>Thao tác này mở trang <strong>C/C++ Configurations</strong>. Khi bạn thực hiện thay đổi ở đây, VS Code sẽ ghi chúng vào một tệp có tên <code>c_cpp_properties.json</code> trong thư mục <code>.vscode</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00028.png?featherlight=false&width=90pc"></p>
+<p>Trong JSON trên, <code>program</code> chỉ định chương trình bạn muốn gỡ lỗi. Ở đây nó được đặt thành thư mục tệp đang hoạt động (<code>${fileDirname}</code>) và tên tệp đang hoạt động với phần mở rộng <code>.exe</code> (<code>${fileBasenameNoExtension}.exe</code>), nếu <code>helloworld.cpp</code> là tệp đang hoạt động thì sẽ là <code>helloworld.exe</code>. Thuộc tính <code>args</code> là một mảng các đối số để truyền cho chương trình trong thời gian chạy.</p>
+<p>Theo mặc định, tiện ích mở rộng C++ sẽ không thêm bất kỳ điểm dừng nào vào mã nguồn của bạn và giá trị <code>stopAtEntry</code> được đặt thành <code>false</code>.</p>
+<p>Thay đổi giá trị <code>stopAtEntry</code> thành <code>true</code> để khiến trình gỡ lỗi dừng tại phương thức <code>main</code> khi bạn bắt đầu gỡ lỗi.</p>
+<blockquote>
+<p>Từ giờ trở đi, nút play và <code>kb(workbench.action.debug.start)</code> sẽ đọc từ tệp <code>launch.json</code> của bạn khi khởi chạy chương trình để gỡ lỗi.</p>
+</blockquote>
+<h4 id="cấu-hình-cc-1">Cấu hình C/C++</h4>
+<p>Nếu bạn muốn kiểm soát nhiều hơn đối với tiện ích mở rộng C++, bạn có thể tạo một tệp <code>c_cpp_properties.json</code>, cho phép bạn thay đổi các cài đặt như đường dẫn đến trình biên dịch, đường dẫn include, tiêu chuẩn C++ (mặc định là C++17), và nhiều hơn nữa.</p>
+<p>Bạn có thể xem giao diện cấu hình C/C++ bằng cách chạy lệnh <strong>C/C++: Edit Configurations (UI)</strong> từ Command Palette (<code>kb(workbench.action.showCommands)</code>).</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00027.png?featherlight=false&width=90pc"></p>
+<p>Thao tác này mở trang <strong>C/C++ Configurations</strong>. Khi bạn thực hiện thay đổi ở đây, VS Code sẽ ghi chúng vào một tệp có tên <code>c_cpp_properties.json</code> trong thư mục <code>.vscode</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00028.png?featherlight=false&width=90pc"></p>
+<h4 id="tái-sử-dụng-cấu-hình-c-của-bạn">Tái sử dụng cấu hình C++ của bạn</h4>
+<p>VS Code giờ đã được cấu hình để sử dụng trình biên dịch Microsoft C++. Cấu hình này áp dụng cho workspace hiện tại. Để tái sử dụng cấu hình, chỉ cần sao chép các tệp JSON vào thư mục <code>.vscode</code> trong một thư mục dự án mới (workspace) và thay đổi tên của (các) tệp nguồn và tệp thực thi khi cần.</p>
+<h4 id="chạy-vs-code-bên-ngoài-developer-command-prompt">Chạy VS Code bên ngoài Developer Command Prompt</h4>
+<p>Trong một số trường hợp nhất định, không thể chạy VS Code từ <strong>Developer Command Prompt for Visual Studio</strong> (ví dụ: trong các kịch bản Remote Development thông qua SSH). Trong trường hợp đó, bạn có thể tự động hóa việc khởi tạo <strong>Developer Command Prompt for Visual Studio</strong> trong quá trình build bằng cách sử dụng cấu hình <code>tasks.json</code> sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;windows&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;shell&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;executable&#34;</span>: <span style="color:#e6db74">&#34;cmd.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;/C&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// Đường dẫn đến VsDevCmd.bat phụ thuộc vào phiên bản Visual Studio bạn đã cài đặt.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#e6db74">&#34;\&#34;C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/Tools/VsDevCmd.bat\&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;&amp;&amp;&#34;</span>
+</span></span><span style="display:flex;"><span>                ]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tasks&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;cl.exe build active file&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;cl.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/Zi&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/EHsc&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/Fe:&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;${file}&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;problemMatcher&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;$msCompile&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;group&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>Lưu ý</strong>: Đường dẫn đến <code>VsDevCmd.bat</code> có thể khác tùy thuộc vào phiên bản Visual Studio hoặc đường dẫn cài đặt. Bạn có thể tìm đường dẫn đến <code>VsDevCmd.bat</code> bằng cách mở Command Prompt và chạy <code>dir &quot;\VsDevCmd*&quot; /s</code>.</p>
+</blockquote>
+<h4 id="xử-lý-sự-cố">Xử lý sự cố</h4>
+<h4 id="thuật-ngữ-clexe-không-được-nhận-diện">Thuật ngữ &lsquo;cl.exe&rsquo; không được nhận diện</h4>
+<p>Nếu bạn thấy lỗi &ldquo;The term &lsquo;cl.exe&rsquo; is not recognized as the name of a cmdlet, function, script file, or operable program&rdquo;, điều này thường có nghĩa là bạn đang chạy VS Code bên ngoài <strong>Developer Command Prompt for Visual Studio</strong> và VS Code không biết đường dẫn đến trình biên dịch <code>cl.exe</code>.</p>
+<p>VS Code phải được khởi động từ Developer Command Prompt for Visual Studio, hoặc task phải được cấu hình để <a href="/vi/2-how-to-program-in-c/#run-vs-code-outside-the-developer-command-prompt">chạy bên ngoài Developer Command Prompt</a>.</p>
+<p>Bạn luôn có thể kiểm tra xem mình có đang chạy VS Code trong ngữ cảnh của Developer Command Prompt hay không bằng cách mở Terminal mới (<code>kb(workbench.action.terminal.new)</code>) và gõ &lsquo;cl&rsquo; để xác minh <code>cl.exe</code> có sẵn cho VS Code.</p>
+<h4 id="lỗi-nghiêm-trọng-c1034-asserth-không-có-đường-dẫn-include-nào-được-thiết-lập">lỗi nghiêm trọng C1034: assert.h: không có đường dẫn include nào được thiết lập</h4>
+<p>Trong trường hợp này, <code>cl.exe</code> có sẵn cho VS Code thông qua biến môi trường <code>PATH</code>, nhưng VS Code vẫn cần được khởi động từ <strong>Developer Command Prompt for Visual Studio</strong>, hoặc được cấu hình để <a href="/vi/2-how-to-program-in-c/#run-vs-code-outside-the-developer-command-prompt">chạy bên ngoài Developer Command Prompt</a>. Nếu không, <code>cl.exe</code> không có quyền truy cập vào các biến môi trường quan trọng như <code>INCLUDE</code>.</p>
+<h4 id="các-bước-tiếp-theo">Các bước tiếp theo</h4>
+<ul>
+<li>Khám phá <a href="/docs/editor/codebasics.md">Hướng dẫn Người dùng VS Code</a>.</li>
+<li>Xem lại <a href="/docs/languages/cpp.md">Tổng quan về tiện ích mở rộng C++</a>.</li>
+<li>Tạo một workspace mới, sao chép các tệp JSON <code>.vscode</code> của bạn vào đó, điều chỉnh các cài đặt cần thiết cho đường dẫn workspace mới, tên chương trình, và v.v., và bắt đầu lập trình!</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/1-introduction/" title="Giới thiệu về CS50"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/3-c-syntax/" title="Cú pháp C" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1732790982"></script>
+    <script src="/js/perfect-scrollbar.min.js?1732790982"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1732790982"></script>
+    <script src="/js/jquery.sticky.js?1732790982"></script>
+    <script src="/js/featherlight.min.js?1732790982"></script>
+    <script src="/js/highlight.pack.js?1732790982"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1732790982"></script>
+    <script src="/js/learn.js?1732790982"></script>
+    <script src="/js/hugo-learn.js?1732790982"></script>
+
+    <link href="/mermaid/mermaid.css?1732790982" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1732790982"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

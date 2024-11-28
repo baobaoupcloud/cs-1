@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.134.0">
+    <meta name="description" content="Baobao">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>How to Program in C :: CS50</title>
+
+    
+    <link href="/css/nucleus.css?1732790982" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1732790982" rel="stylesheet">
+    <link href="/css/hybrid.css?1732790982" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1732790982" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1732790982" rel="stylesheet">
+    <link href="/css/auto-complete.css?1732790982" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1732790982" rel="stylesheet">
+    <link href="/css/theme.css?1732790982" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1732790982" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1732790982" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1732790982"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/2-how-to-program-in-c/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://baobaoupcloud.github.io/cs/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1732790982"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1732790982"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1732790982"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduction/" title="Introduction to CS50" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduction/">
+          <b>1. </b>Introduction to CS50
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-how-to-program-in-c/" title="How to Program in C" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/2-how-to-program-in-c/">
+           <b> 2. </b> How to Program in C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-c-syntax/" title="C Syntax" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-c-syntax/">
+           <b> 3. </b> C Syntax
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-c-output/" title="Output and Text Printing in C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-c-output/">
+           <b> 4. </b> Output and Text Printing in C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-c-comments/" title="Comments in C" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-c-comments/">
+           <b> 5. </b> Comments in C
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-c-variables/" title="C Variables" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-c-variables/">
+           <b> 6. </b> C Variables
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/7-c-data-types/" title="C Programming Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/7-c-data-types/">
+           <b> 7. </b> C Programming Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/8-c-constants/" title="Constants in C Programming" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/8-c-constants/">
+           <b> 8. </b> Constants in C Programming
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/9-c-operators/" title="C Programming Operators" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/9-c-operators/">
+           <b> 9. </b> C Programming Operators
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/10-c-booleans/" title="C Booleans" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/10-c-booleans/">
+           <b> 10. </b> C Booleans
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/11-c-if-else/" title="C If-Else" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/11-c-if-else/">
+           <b> 11. </b> C If-Else
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/12-c-switch/" title="C Switch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/12-c-switch/">
+           <b> 12. </b> C Switch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/13-c-while-loop/" title="C While Loop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/13-c-while-loop/">
+           <b> 13. </b> C While Loop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/14-c-for-loop/" title="C For Loop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/14-c-for-loop/">
+           <b> 14. </b> C For Loop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/15-c-break-and-continue/" title="C Break and Continue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/15-c-break-and-continue/">
+           <b> 15. </b> C Break and Continue
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/16-summary/" title="Summary" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/16-summary/">
+           <b> 16. </b> Summary
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/2-how-to-program-in-c/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/2-how-to-program-in-c/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>27-11-2024</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/phan-kim-bao/"  style="color:orange">Phan Kim Bảo </a> <br>
+
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://baobaoupcloud.github.io/cs-1/2-How-to-program-in-C/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>CS50 Week 1 - C Programming</a> > How to Program in C
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              How to Program in C
+            </h1>
+          
+
+        
+
+
+
+	<h4 id="configure-vs-code-for-microsoft-c">Configure VS Code for Microsoft C++</h4>
+<p>In this tutorial, you configure Visual Studio Code to use the Microsoft Visual C++ compiler and debugger on Windows.</p>
+<p>After configuring VS Code, you will compile and debug a simple Hello World program in VS Code. This tutorial does not teach you details about the Microsoft C++ toolset or the C++ language. For those subjects, there are many good resources available on the Web.</p>
+<p>If you have any problems, feel free to file an issue for this tutorial in the <a href="https://github.com/microsoft/vscode-docs/issues">VS Code documentation repository</a>.</p>
+<h4 id="prerequisites">Prerequisites</h4>
+<p>To successfully complete this tutorial, you must do the following:</p>
+<ol>
+<li>
+<p>Install <a href="/download">Visual Studio Code</a></p>
+</li>
+<li>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++ extension for VS Code</a>. You can install the C/C++ extension by searching for &lsquo;c++&rsquo; in the Extensions view (<code>kb(workbench.view.extensions)</code>).</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0001.png?featherlight=false&width=90pc"></p>
+<ol start="3">
+<li>
+<p>Install the Microsoft Visual C++ (MSVC) compiler toolset.</p>
+<p>If you have a recent version of Visual Studio, open the Visual Studio Installer from the Windows Start menu and verify that the C++ workload is checked. If it&rsquo;s not installed, then check the box and select the <strong>Modify</strong> button in the installer.</p>
+<p>You can also install the <strong>Desktop development with C++</strong> workload without a full Visual Studio IDE installation. From the Visual Studio <a href="https://visualstudio.microsoft.com/downloads/#remote-tools-for-visual-studio-2022">Downloads</a> page, scroll down until you see <strong>Tools for Visual Studio</strong> under the <strong>All Downloads</strong> section and select the download for <strong>Build Tools for Visual Studio 2022</strong>.</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0002.png?featherlight=false&width=90pc"></p>
+<p>This will launch the Visual Studio Installer, which will bring up a dialog showing the available Visual Studio Build Tools workloads. Check the <strong>Desktop development with C++</strong> workload and select <strong>Install</strong>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0003.png?featherlight=false&width=90pc"></p>
+<blockquote>
+<p><strong>Note</strong>: You can use the C++ toolset from Visual Studio Build Tools along with Visual Studio Code to compile, build, and verify any C++ codebase as long as you also have a valid Visual Studio license (either Community, Pro, or Enterprise) that you are actively using to develop that C++ codebase.</p>
+</blockquote>
+<h4 id="check-your-microsoft-visual-c-installation">Check your Microsoft Visual C++ installation</h4>
+<p>To use MSVC from a command line or VS Code, you must run from a <strong>Developer Command Prompt for Visual Studio</strong>. An ordinary shell such as PowerShell, Bash, or the Windows command prompt does not have the necessary path environment variables set.</p>
+<p>To open the Developer Command Prompt for VS, start typing &lsquo;developer&rsquo; in the Windows Start menu, and you should see it appear in the list of suggestions. The exact name depends on which version of Visual Studio or the Visual Studio Build Tools you have installed. Select the item to open the prompt.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0004.png?featherlight=false&width=90pc"></p>
+<p>You can test that you have the C++ compiler, <code>cl.exe</code>, installed correctly by typing &lsquo;cl&rsquo; and you should see a copyright message with the version and basic usage description.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0005.png?featherlight=false&width=90pc"></p>
+<p>If the Developer Command Prompt is using the BuildTools location as the starting directory (you wouldn&rsquo;t want to put projects there), navigate to your user folder (<code>C:\users\{your username}\</code>) before you start creating new projects.</p>
+<blockquote>
+<p><strong>Note</strong>: If for some reason you can&rsquo;t run VS Code from a <strong>Developer Command Prompt</strong>, you can find a workaround for building C++ projects with VS Code in <a href="/2-how-to-program-in-c/#run-vs-code-outside-the-developer-command-prompt">Run VS Code outside a Developer Command Prompt</a>.</p>
+</blockquote>
+<h4 id="create-hello-world">Create Hello World</h4>
+<p>From the Developer Command Prompt, create an empty folder called &ldquo;projects&rdquo; where you can store all your VS Code projects, then create a subfolder called &ldquo;helloworld&rdquo;, navigate into it, and open VS Code (<code>code</code>) in that folder (<code>.</code>) by entering the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> projects
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> projects
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> helloworld
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> helloworld
+</span></span><span style="display:flex;"><span>code .
+</span></span></code></pre></div><p>The &ldquo;code .&rdquo; command opens VS Code in the current working folder, which becomes your &ldquo;workspace&rdquo;. As you go through the tutorial, you will see three files created in a <code>.vscode</code> folder in the workspace:</p>
+<ul>
+<li><code>tasks.json</code> (build instructions)</li>
+<li><code>launch.json</code> (debugger settings)</li>
+<li><code>c_cpp_properties.json</code> (compiler path and IntelliSense settings)</li>
+</ul>
+<h4 id="add-a-source-code-file">Add a source code file</h4>
+<p>In the File Explorer title bar, select the <strong>New File</strong> button and name the file <code>helloworld.cpp</code>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0006.png?featherlight=false&width=90pc"></p>
+<h4 id="add-hello-world-source-code">Add hello world source code</h4>
+<p>Now paste in this source code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> msg {<span style="color:#e6db74">&#34;Hello&#34;</span>, <span style="color:#e6db74">&#34;C++&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>, <span style="color:#e6db74">&#34;from&#34;</span>, <span style="color:#e6db74">&#34;VS Code&#34;</span>, <span style="color:#e6db74">&#34;and the C++ extension!&#34;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> string<span style="color:#f92672">&amp;</span> word : msg)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> word <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now press <code>kb(workbench.action.files.save)</code> to save the file. Notice how the file you just added appears in the <strong>File Explorer</strong> view (<code>kb(workbench.view.explorer)</code>) in the side bar of VS Code:</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0007.png?featherlight=false&width=90pc"></p>
+<p>You can also enable <a href="/docs/editor/codebasics.md#save-auto-save">Auto Save</a> to automatically save your file changes, by checking <strong>Auto Save</strong> in the main <strong>File</strong> menu.</p>
+<p>The Activity Bar on the far left lets you open different views such as <strong>Search</strong>, <strong>Source Control</strong>, and <strong>Run</strong>. You&rsquo;ll look at the <strong>Run</strong> view later in this tutorial. You can find out more about the other views in the VS Code <a href="/docs/getstarted/userinterface.md">User Interface documentation</a>.</p>
+<blockquote>
+<p><strong>Note</strong>: When you save or open a C++ file, you may see a notification from the C/C++ extension about the availability of an Insiders version, which lets you test new features and fixes. You can ignore this notification by selecting the <code>X</code> (<strong>Clear Notification</strong>).</p>
+</blockquote>
+<h4 id="explore-intellisense">Explore IntelliSense</h4>
+<p>In your new <code>helloworld.cpp</code> file, hover over <code>vector</code> or <code>string</code> to see type information. After the declaration of the <code>msg</code> variable, start typing <code>msg.</code> as you would when calling a member function. You should immediately see a completion list that shows all the member functions, and a window that shows the type information for the <code>msg</code> object:</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0008.png?featherlight=false&width=90pc"></p>
+<p>You can press the <code>kbstyle(Tab)</code> key to insert the selected member; then, when you add the opening parenthesis, you will see information about any arguments that the function requires.</p>
+<h4 id="run-helloworldcpp">Run helloworld.cpp</h4>
+<p>Remember, the C++ extension uses the C++ compiler you have installed on your machine to build your program. Make sure you have a C++ compiler installed before attempting to run and debug <code>helloworld.cpp</code> in VS Code.</p>
+<ol>
+<li>Open <code>helloworld.cpp</code> so that it is the active file.</li>
+<li>Press the play button in the top right corner of the editor.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/0009.png?featherlight=false&width=90pc"></p>
+<ol start="3">
+<li>Choose <strong>C/C++: cl.exe build and debug active file</strong> from the list of detected compilers on your system.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00010.png?featherlight=false&width=90pc"></p>
+<p>You&rsquo;ll only be asked to choose a compiler the first time you run <code>helloworld.cpp</code>. This compiler will be set as the &ldquo;default&rdquo; compiler in <code>tasks.json</code> file.</p>
+<ol start="4">
+<li>After the build succeeds, your program&rsquo;s output will appear in the integrated <strong>Terminal</strong>.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00011.png?featherlight=false&width=90pc"></p>
+<p>If you get an error trying to build and debug with cl.exe, make sure you have <a href="/2-how-to-program-in-c/#check-your-microsoft-visual-c-installation">started VS Code from the Developer Command Prompt for Visual Studio</a> using the <code>code .</code> shortcut.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00012.png?featherlight=false&width=90pc"></p>
+<p>The first time you run your program, the C++ extension creates <code>tasks.json</code>, which you&rsquo;ll find in your project&rsquo;s <code>.vscode</code> folder. <code>tasks.json</code> stores build configurations.</p>
+<p>Your new <code>tasks.json</code> file should look similar to the JSON below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;tasks&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build active file&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;cl.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/Zi&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/EHsc&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/Fe:&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${file}&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;problemMatcher&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;$msCompile&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;group&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;detail&#34;</span>: <span style="color:#e6db74">&#34;Task generated by Debugger.&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>Note</strong>: You can learn more about <code>tasks.json</code> variables in the <a href="/docs/editor/variables-reference.md">variables reference</a>.</p>
+</blockquote>
+<p>The <code>command</code> setting specifies the program to run; in this case that is &ldquo;cl.exe&rdquo;. The <code>args</code> array specifies the command-line arguments that will be passed to cl.exe. These arguments must be specified in the order expected by the compiler.</p>
+<p>This task tells the C++ compiler to take the active file (<code>${file}</code>), compile it, and create an executable file (<code>/Fe:</code> switch) in the current directory (<code>${fileDirname}</code>) with the same name as the active file but with the <code>.exe</code> extension (<code>${fileBasenameNoExtension}.exe</code>), resulting in <code>helloworld.exe</code> for our example.</p>
+<p>The <code>label</code> value is what you will see in the tasks list; you can name this whatever you like.</p>
+<p>The <code>detail</code> value is what you will as the description of the task in the tasks list. It&rsquo;s highly recommended to rename this value to differentiate it from similar tasks.</p>
+<p>The <code>problemMatcher</code> value selects the output parser to use for finding errors and warnings in the compiler output. For cl.exe, you&rsquo;ll get the best results if you use the <code>$msCompile</code> problem matcher.</p>
+<p>From now on, the play button will read from <code>tasks.json</code> to figure out how to build and run your program. You can define multiple build tasks in <code>tasks.json</code>, and whichever task is marked as the default will be used by the play button. In case you need to change the default compiler, you can run <strong>Tasks: Configure default build task</strong>. Alternatively you can modify the <code>tasks.json</code> file and remove the default by replacing this segment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;group&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><p>with this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;group&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;build&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><h4 id="modifying-tasksjson">Modifying tasks.json</h4>
+<p>You can modify your <code>tasks.json</code> to build multiple C++ files by using an argument like <code>&quot;${workspaceFolder}/*.cpp&quot;</code> instead of <code>&quot;${file}&quot;</code>.This will build all <code>.cpp</code> files in your current folder. You can also modify the output filename by replacing <code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code> with a hard-coded filename (for example <code>&quot;${workspaceFolder}\\myProgram.exe&quot;</code>).</p>
+<h4 id="debug-helloworldcpp">Debug helloworld.cpp</h4>
+<p>To debug your code,</p>
+<ol>
+<li>Go back to <code>helloworld.cpp</code> so that it is the active file.</li>
+<li>Set a breakpoint by clicking on the editor margin or using F9 on the current line.
+<img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00013.png?featherlight=false&width=90pc"></li>
+<li>From the drop-down next to the play button, select <strong>Debug C/C++ File</strong>.
+<img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00014.png?featherlight=false&width=90pc"></li>
+<li>Choose <strong>C/C++: cl.exe build and debug active file</strong> from the list of detected compilers on your system (you&rsquo;ll only be asked to choose a compiler the first time you run or debug <code>helloworld.cpp</code>).
+<img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00015.png?featherlight=false&width=90pc"></li>
+</ol>
+<p>The play button has two modes: <strong>Run C/C++ File</strong> and <strong>Debug C/C++ File</strong>. It will default to the last-used mode. If you see the debug icon in the play button, you can select the play button to debug, instead of selecting the drop-down menu item.</p>
+<p>If you get an error trying to build and debug with cl.exe, make sure you have <a href="/2-how-to-program-in-c/#check-your-microsoft-visual-c-installation">started VS Code from the Developer Command Prompt for Visual Studio</a> using the <code>code .</code> shortcut.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00016.png?featherlight=false&width=90pc"></p>
+<h4 id="explore-the-debugger">Explore the debugger</h4>
+<p>Before you start stepping through the code, let&rsquo;s take a moment to notice several changes in the user interface:</p>
+<ul>
+<li>The Integrated Terminal appears at the bottom of the source code editor. In the <strong>Debug Output</strong> tab, you see output that indicates the debugger is up and running.</li>
+<li>The editor highlights the line where you set a breakpoint before starting the debugger:</li>
+</ul>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00017.png?featherlight=false&width=90pc"></p>
+<ul>
+<li>
+<p>The <strong>Run and Debug</strong> view on the left shows debugging information. You&rsquo;ll see an example later in the tutorial.</p>
+</li>
+<li>
+<p>At the top of the code editor, a debugging control panel appears. You can move this around the screen by grabbing the dots on the left side.</p>
+</li>
+</ul>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00018.png?featherlight=false&width=90pc"></p>
+<h4 id="step-through-the-code">Step through the code</h4>
+<p>Now you&rsquo;re ready to start stepping through the code.</p>
+<ol>
+<li>Click or press the <strong>Step over</strong> icon in the debugging control panel.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00019.png?featherlight=false&width=90pc"></p>
+<p>This will advance program execution to the first line of the for loop, and skip over all the internal function calls within the <code>vector</code> and <code>string</code> classes that are invoked when the <code>msg</code> variable is created and initialized. Notice the change in the <strong>Variables</strong> window on the left.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00020.png?featherlight=false&width=90pc"></p>
+<p>In this case, the errors are expected because, although the variable names for the loop are now visible to the debugger, the statement has not executed yet, so there is nothing to read at this point. The contents of <code>msg</code> are visible, however, because that statement has completed.</p>
+<ol start="2">
+<li>Press <strong>Step over</strong> again to advance to the next statement in this program (skipping over all the internal code that is executed to initialize the loop). Now, the <strong>Variables</strong> window shows information about the loop variables.</li>
+<li>Press <strong>Step over</strong> again to execute the <code>cout</code> statement. (Note that the C++ extension does not print any output to the <strong>Debug Console</strong> until the loop exits.)</li>
+<li>If you like, you can keep pressing <strong>Step over</strong> until all the words in the vector have been printed to the console. But if you are curious, try pressing the <strong>Step Into</strong> button to step through source code in the C++ standard library!</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00021.png?featherlight=false&width=90pc"></p>
+<p>To return to your own code, one way is to keep pressing <strong>Step over</strong>. Another way is to set a breakpoint in your code by switching to the <code>helloworld.cpp</code> tab in the code editor, putting the insertion point somewhere on the <code>cout</code> statement inside the loop, and pressing <code>kb(editor.debug.action.toggleBreakpoint)</code>. A red dot appears in the gutter on the left to indicate that a breakpoint has been set on this line.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00022.png?featherlight=false&width=90pc"></p>
+<p>Then press <code>kb(workbench.action.debug.start)</code> to start execution from the current line in the standard library header. Execution will break on <code>cout</code>. If you like, you can press <code>kb(editor.debug.action.toggleBreakpoint)</code> again to toggle off the breakpoint.</p>
+<h4 id="set-a-watch">Set a watch</h4>
+<p>Sometimes you might want to keep track of the value of a variable as your program executes. You can do this by setting a <strong>watch</strong> on the variable.</p>
+<ol>
+<li>Place the insertion point inside the loop. In the <strong>Watch</strong> window, select the plus sign and in the text box, type <code>word</code>, which is the name of the loop variable. Now view the Watch window as you step through the loop.</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00023.png?featherlight=false&width=90pc"></p>
+<ol start="2">
+<li>
+<p>Add another watch by adding this statement before the loop: <code>int i = 0;</code>. Then, inside the loop, add this statement: <code>++i;</code>. Now add a watch for <code>i</code> as you did in the previous step.</p>
+</li>
+<li>
+<p>To quickly view the value of any variable while execution is paused on a breakpoint, you can hover over it with the mouse pointer.</p>
+</li>
+</ol>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00024.png?featherlight=false&width=90pc"></p>
+<h4 id="customize-debugging-with-launchjson">Customize debugging with launch.json</h4>
+<p>When you debug with the play button or <code>kb(workbench.action.debug.start)</code>, the C++ extension creates a dynamic debug configuration on the fly.</p>
+<p>There are cases where you&rsquo;d want to customize your debug configuration, such as specifying arguments to pass to the program at runtime. You can define custom debug configurations in a <code>launch.json</code> file.</p>
+<p>To create <code>launch.json</code>, choose <strong>Add Debug Configuration</strong> from the play button drop-down menu.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00025.png?featherlight=false&width=90pc"></p>
+<p>You&rsquo;ll then see a dropdown for various predefined debugging configurations. Choose <strong>C/C++: cl.exe build and debug active file</strong>.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00026.png?featherlight=false&width=90pc"></p>
+<p>VS Code creates a <code>launch.json</code> file, which looks something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.2.0&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;configurations&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build and debug active file&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;cppvsdbg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;program&#34;</span>: <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;stopAtEntry&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;environment&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;externalConsole&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;preLaunchTask&#34;</span>: <span style="color:#e6db74">&#34;C/C++: cl.exe build active file&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the JSON above, <code>program</code> specifies the program you want to debug. Here it is set to the active file folder (<code>${fileDirname}</code>) and active filename with the <code>.exe</code> extension (<code>${fileBasenameNoExtension}.exe</code>), which if <code>helloworld.cpp</code> is the active file will be <code>helloworld.exe</code>. The <code>args</code> property is an array of arguments to pass to the program at runtime.</p>
+<p>By default, the C++ extension won&rsquo;t add any breakpoints to your source code and the <code>stopAtEntry</code> value is set to <code>false</code>.</p>
+<p>Change the <code>stopAtEntry</code> value to <code>true</code> to cause the debugger to stop on the <code>main</code> method when you start debugging.</p>
+<blockquote>
+<p>From now on, the play button and <code>kb(workbench.action.debug.start)</code> will read from your <code>launch.json</code> file when launching your program for debugging.</p>
+</blockquote>
+<h4 id="cc-configurations">C/C++ configurations</h4>
+<p>If you want more control over the C/C++ extension, you can create a <code>c_cpp_properties.json</code> file, which will allow you to change settings such as the path to the compiler, include paths, C++ standard (default is C++17), and more.</p>
+<p>You can view the C/C++ configuration UI by running the command <strong>C/C++: Edit Configurations (UI)</strong> from the Command Palette (<code>kb(workbench.action.showCommands)</code>).</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00027.png?featherlight=false&width=90pc"></p>
+<p>This opens the <strong>C/C++ Configurations</strong> page. When you make changes here, VS Code writes them to a file called <code>c_cpp_properties.json</code> in the <code>.vscode</code> folder.</p>
+<p><img alt="CS" src="https://raw.githubusercontent.com/baobaoupcloud/cs-1/main/static/images/0002/00028.png?featherlight=false&width=90pc"></p>
+<p>Visual Studio Code places these settings in <code>.vscode\c_cpp_properties.json</code>. If you open that file directly, it should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;configurations&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Win32&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;includePath&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;${workspaceFolder}/**&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;defines&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;_DEBUG&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;UNICODE&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;_UNICODE&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;windowsSdkVersion&#34;</span>: <span style="color:#e6db74">&#34;10.0.18362.0&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;compilerPath&#34;</span>: <span style="color:#e6db74">&#34;C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.24.28314/bin/Hostx64/x64/cl.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cStandard&#34;</span>: <span style="color:#e6db74">&#34;c11&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cppStandard&#34;</span>: <span style="color:#e6db74">&#34;c++17&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;intelliSenseMode&#34;</span>: <span style="color:#e6db74">&#34;msvc-x64&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>],
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You only need to add to the <strong>Include path</strong> array setting if your program includes header files that are not in your workspace or in the standard library path.</p>
+<h4 id="compiler-path">Compiler path</h4>
+<p>The <code>compilerPath</code> setting is an important setting in your configuration. The extension uses it to infer the path to the C++ standard library header files. When the extension knows where to find those files, it can provide useful features like smart completions and <strong>Go to Definition</strong> navigation.</p>
+<p>The C/C++ extension attempts to populate <code>compilerPath</code> with the default compiler location based on what it finds on your system. The extension looks in several common compiler locations.</p>
+<p>The <code>compilerPath</code> search order is:</p>
+<ul>
+<li>First check for the Microsoft Visual C++ compilerOpe</li>
+<li>Then look for g++ on Windows Subsystem for Linux (WSL)</li>
+<li>Then g++ for Mingw-w64.</li>
+</ul>
+<p>If you have g++ or WSL installed, you might need to change <code>compilerPath</code> to match the preferred compiler for your project. For Microsoft C++, the path should look something like this, depending on which specific version you have installed: &ldquo;C:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe&rdquo;.</p>
+<h4 id="reusing-your-c-configuration">Reusing your C++ configuration</h4>
+<p>VS Code is now configured to use the Microsoft C++ compiler. The configuration applies to the current workspace. To reuse the configuration, just copy the JSON files to a <code>.vscode</code> folder in a new project folder (workspace) and change the names of the source file(s) and executable as needed.</p>
+<h4 id="run-vs-code-outside-the-developer-command-prompt">Run VS Code outside the Developer Command Prompt</h4>
+<p>In certain circumstances, it isn&rsquo;t possible to run VS Code from <strong>Developer Command Prompt for Visual Studio</strong> (for example, in Remote Development through SSH scenarios). In that case, you can automate initialization of <strong>Developer Command Prompt for Visual Studio</strong> during the build using the following <code>tasks.json</code> configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;windows&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;shell&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;executable&#34;</span>: <span style="color:#e6db74">&#34;cmd.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;/C&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// The path to VsDevCmd.bat depends on the version of Visual Studio you have installed.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#e6db74">&#34;\&#34;C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/Tools/VsDevCmd.bat\&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;&amp;&amp;&#34;</span>
+</span></span><span style="display:flex;"><span>                ]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tasks&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;cl.exe build active file&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;cl.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/Zi&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/EHsc&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/Fe:&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;${fileDirname}\\${fileBasenameNoExtension}.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;${file}&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;problemMatcher&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;$msCompile&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;group&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>Note</strong>: The path to <code>VsDevCmd.bat</code> might be different depending on the Visual Studio version or installation path. You can find the path to <code>VsDevCmd.bat</code> by opening a Command Prompt and running <code>dir &quot;\VsDevCmd*&quot; /s</code>.</p>
+</blockquote>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<h4 id="the-term-clexe-is-not-recognized">The term &lsquo;cl.exe&rsquo; is not recognized</h4>
+<p>If you see the error &ldquo;The term &lsquo;cl.exe&rsquo; is not recognized as the name of a cmdlet, function, script file, or operable program.&rdquo;, this usually means you are running VS Code outside of a <strong>Developer Command Prompt for Visual Studio</strong> and VS Code doesn&rsquo;t know the path to the <code>cl.exe</code> compiler.</p>
+<p>VS Code must either be started from the Developer Command Prompt for Visual Studio, or the task must be configured to <a href="/2-how-to-program-in-c/#run-vs-code-outside-the-developer-command-prompt">run outside a Developer Command Prompt</a>.</p>
+<p>You can always check that you are running VS Code in the context of the Developer Command Prompt by opening a new Terminal (<code>kb(workbench.action.terminal.new)</code>) and typing &lsquo;cl&rsquo; to verify <code>cl.exe</code> is available to VS Code.</p>
+<h4 id="fatal-error-c1034-asserth-no-include-path-set">fatal error C1034: assert.h: no include path set</h4>
+<p>In this case, <code>cl.exe</code> is available to VS Code through the <code>PATH</code> environment variable, but VS Code still needs to either be started from the <strong>Developer Command Prompt for Visual Studio</strong>, or be configured to <a href="/2-how-to-program-in-c/#run-vs-code-outside-the-developer-command-prompt">run outside the Developer Command Prompt</a>. Otherwise, <code>cl.exe</code> does not have access to important environment variables such as <code>INCLUDE</code>.</p>
+<h4 id="next-steps">Next steps</h4>
+<ul>
+<li>Explore the <a href="/docs/editor/codebasics.md">VS Code User Guide</a>.</li>
+<li>Review the <a href="/docs/languages/cpp.md">Overview of the C++ extension</a>.</li>
+<li>Create a new workspace, copy your <code>.vscode</code> JSON files to it, adjust the necessary settings for the new workspace path, program name, and so on, and start coding!</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/1-introduction/" title="Introduction to CS50"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/3-c-syntax/" title="C Syntax" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1732790982"></script>
+    <script src="/js/perfect-scrollbar.min.js?1732790982"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1732790982"></script>
+    <script src="/js/jquery.sticky.js?1732790982"></script>
+    <script src="/js/featherlight.min.js?1732790982"></script>
+    <script src="/js/highlight.pack.js?1732790982"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1732790982"></script>
+    <script src="/js/learn.js?1732790982"></script>
+    <script src="/js/hugo-learn.js?1732790982"></script>
+
+    <link href="/mermaid/mermaid.css?1732790982" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1732790982"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
