@@ -1,12 +1,12 @@
 +++
-title = "Comments in C"
+title = "C Comments"
 weight = 5
 chapter = false
 pre = " <b> 5. </b> "
 +++
 
 
-#### Comments in C {#comments-in-c}
+#### C Comments {#comments-in-c}
 
 #### Single-line Comments
 
