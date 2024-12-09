@@ -27,7 +27,7 @@ By the end of this module, you will be able to:
 4. [C Output](4-c-output)
 5. [C Comments](5-c-comments)
 6. [C Variables](6-c-variables)
-7. [C Data Types](7-c-data-types)
+7. [C Programming Data Types](7-c-data-types)
 8. [C Constants](8-c-constants)
 9. [C Operators](9-c-operators)
 10. [C Booleans](10-c-booleans)
