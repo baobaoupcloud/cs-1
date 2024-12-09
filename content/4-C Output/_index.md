@@ -1,12 +1,12 @@
 +++
-title = "Output and Text Printing in C"
+title = "C output"
 weight = 4
 chapter = false
 pre = " <b> 4. </b> "
 +++
 
 
-#### Output and Text Printing in C
+#### C Output
 
 In this guide, we'll explore how to create text output in C programming language, covering everything from basic printing to formatted output.
 
