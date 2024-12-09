@@ -21,7 +21,7 @@ By the end of this module, you will be able to:
 
 #### Workshop Contents
 
-1. [Introduction](1-introduction)
+1. [Introduction to CS50](1-introduction)
 2. [How to Program in C](2-how-to-program-in-c)
 3. [C Syntax](3-c-syntax)
 4. [C Output](4-c-output)
