@@ -1,5 +1,5 @@
 +++
-title = "C output"
+title = "C Output"
 weight = 4
 chapter = false
 pre = " <b> 4. </b> "
