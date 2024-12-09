@@ -33,7 +33,7 @@ Kết thúc module này, bạn sẽ có khả năng:
 10. [Kiểu dữ liệu Boolean](10-c-booleans)
 11. [Câu lệnh điều kiện trong C](11-c-if-else)
 12. [Switch Statement trong C](12-c-switch)
-13. [Vòng lặp For trong C](13-c-while-loop)
+13. [Vòng lặp While trong C](13-c-while-loop)
 14. [Vòng lặp For trong C]](14-c-for-loop)
 15. [Câu lệnh Break và Continue trong C](15-c-break-and-continue)
 16. [Tóm tắt](16-summary)
