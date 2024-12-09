@@ -1,11 +1,11 @@
 +++
-title = "Constants in C Programming"
+title = "C Constants"
 weight = 8
 chapter = false
 pre = " <b> 8. </b> "
 +++
 
-#### Constants in C Programming
+#### C Constants
 
 Constants are variables whose values cannot be modified after declaration. They provide a way to create read-only values in your programs.
 
