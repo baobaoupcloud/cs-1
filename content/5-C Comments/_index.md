@@ -6,8 +6,6 @@ pre = " <b> 5. </b> "
 +++
 
 
-#### C Comments {#comments-in-c}
-
 #### Single-line Comments
 
 Single-line comments start with two forward slashes (`//`).
