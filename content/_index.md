@@ -29,7 +29,7 @@ By the end of this module, you will be able to:
 6. [C Variables](6-c-variables)
 7. [C Programming Data Types](7-c-data-types)
 8. [C Constants](8-c-constants)
-9. [C Operators](9-c-operators)
+9. [C Programming Operators](9-c-operators)
 10. [C Booleans](10-c-booleans)
 11. [C If-Else](11-c-if-else)
 12. [C Switch](12-c-switch)
