@@ -1,11 +1,11 @@
 +++
-title = "Vòng lặp trong lập trình C" 
+title = "Vòng lặp While trong lập trình C" 
 weight = 13
 chapter = false
 pre = " <b> 13. </b> "
 +++
 
-#### Vòng lặp trong lập trình C
+#### Vòng lặp While trong lập trình C
 
 Loops (vòng lặp) có thể thực thi một khối lệnh cho đến khi một điều kiện cụ thể được thỏa mãn. Chúng rất hữu ích vì:
 - Tiết kiệm thời gian
